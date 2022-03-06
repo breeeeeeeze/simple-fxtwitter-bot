@@ -19,7 +19,7 @@ const isTwitterVideo = (message) => {
 		message.content.includes('https://twitter.com/') &&
 		message.embeds.length
 	) {
-		if (message.embeds[0].video !== undefined) return true;
+		if (message.embeds[0].video) return true;
 	};
 	return false;
 };
