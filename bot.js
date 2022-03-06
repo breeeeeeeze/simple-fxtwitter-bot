@@ -14,11 +14,14 @@ bot.on('ready', (() => {
 }));
 
 const isTwitterVideo = (message) => {
-	return (
+	if (
 		message.channel.id === process.env.CHANNEL_ID &&
 		message.content.includes('https://twitter.com/') &&
-		message.embeds[0].video !== undefined
-	);
+		message.embeds.length
+	) {
+		if (message.embeds[0].video !== undefined) return true;
+	};
+	return false;
 };
 
 const postFixedLink = (message) => {
