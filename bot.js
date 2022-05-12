@@ -1,4 +1,5 @@
 require('dotenv').config();
+const { channelIDs } = require('./config.json')
 
 const { Client, Intents: { FLAGS } } = require('discord.js');
 const bot = new Client({
@@ -15,7 +16,7 @@ bot.on('ready', (() => {
 
 const isTwitterVideo = (message) => {
 	if (
-		message.channel.id === process.env.CHANNEL_ID &&
+		channelIDs.includes(message.channel.id) &&
 		message.content.includes('https://twitter.com/') &&
 		message.embeds.length
 	) {
