@@ -26,8 +26,8 @@ const isTwitterVideo = (message) => {
 };
 
 const postFixedLink = (message) => {
-	const retardWarning = `<@${message.author.id}> post fxtwitter link retard`;
-	const fixedLink = message.content.replace('https://twitter.com/', 'https://fxtwitter.com/');
+	const retardWarning = `<@${message.author.id}> post vxtwitter link retard`;
+	const fixedLink = message.content.replace('https://twitter.com/', 'https://vxtwitter.com/');
 	message.channel.send(`${retardWarning}\n${fixedLink}`);
 	message.delete();
 };
