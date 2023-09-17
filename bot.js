@@ -14,7 +14,7 @@ bot.on('ready', (() => {
 	console.log('Ready!');
 }));
 
-links = ['https://twitter.com/', 'https://mobile.twitter.com/', 'https://x.com/']
+const links = ['https://twitter.com/', 'https://mobile.twitter.com/', 'https://x.com/']
 
 
 const isTwitterVideo = (message) => {
@@ -29,8 +29,8 @@ const isTwitterVideo = (message) => {
 };
 
 const replaceLink = (message) => {
-	content = message.content
-	for (link of links) {
+	let content = message.content
+	for (const link of links) {
 		content = content.replace(link, 'https://vxtwitter.com/')
 	}
 	return content
