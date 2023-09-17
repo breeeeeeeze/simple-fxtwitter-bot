@@ -14,7 +14,7 @@ bot.on('ready', (() => {
 	console.log('Ready!');
 }));
 
-const links = ['https://twitter.com/', 'https://mobile.twitter.com/', 'https://x.com/']
+const links = ['https://twitter.com/', 'https://mobile.twitter.com/', 'https://x.com/'];
 
 
 const isTwitterVideo = (message) => {
@@ -29,16 +29,16 @@ const isTwitterVideo = (message) => {
 };
 
 const replaceLink = (message) => {
-	let content = message.content
+	let content = message.content;
 	for (const link of links) {
-		content = content.replace(link, 'https://vxtwitter.com/')
+		content = content.replace(link, 'https://vxtwitter.com/');
 	}
-	return content
+	return content;
 }
 
 const postFixedLink = (message) => {
 	const retardWarning = `<@${message.author.id}> post vxtwitter link retard`;
-	const fixedLink = replaceLink(message)
+	const fixedLink = replaceLink(message);
 	message.channel.send(`${retardWarning}\n${fixedLink}`);
 	message.delete();
 };
